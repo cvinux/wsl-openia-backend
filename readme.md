@@ -209,3 +209,87 @@ Puedo darte la **versión extendida del MD** con:
 Solo dime:
 
 👉 **“agrega backend con FastAPI al md”** 🚀
+
+
+📌 1. DOCUMENTACIÓN GIT (LISTA PARA TU MD)
+
+Puedes copiar esto directo a tu documentación:
+
+# 🔧 Configuración de Git y GitHub en WSL
+
+## 📌 Objetivo
+
+Configurar Git dentro de WSL para:
+
+- trabajar en proyectos Linux
+- colaborar con otros desarrolladores
+- usar GitHub de forma segura (SSH)
+
+---
+
+# 🧱 1. Verificar instalación de Git
+
+```bash
+git --version
+Instalar si no existe
+sudo apt install -y git
+⚙️ 2. Configurar identidad de usuario
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
+Verificar configuración
+git config --list
+🔐 3. Configurar acceso a GitHub (SSH)
+Generar clave SSH
+ssh-keygen -t ed25519 -C "tu@email.com"
+
+Presionar Enter → Enter → Enter
+
+Mostrar clave pública
+cat ~/.ssh/id_ed25519.pub
+Agregar clave en GitHub
+Ir a GitHub
+Settings
+SSH and GPG Keys
+New SSH Key
+Pegar clave
+Probar conexión
+ssh -T git@github.com
+
+Resultado esperado:
+
+Hi username! Youve successfully authenticated
+📁 4. Inicializar repositorio
+cd ~/workspace/dev-test/python-backend
+
+git init
+git add .
+git commit -m "Initial commit"
+🔗 5. Conectar con GitHub
+git remote add origin git@github.com:tu-usuario/tu-repo.git
+git branch -M main
+git push -u origin main
+🔄 6. Flujo básico de trabajo
+git add .
+git commit -m "mensaje"
+git push
+🚫 Buenas prácticas
+.gitignore obligatorio
+.venv/
+.env
+__pycache__/
+⚠️ Reglas importantes
+No subir API keys
+No subir entornos virtuales
+Usar SSH en lugar de HTTPS
+Trabajar siempre desde WSL (no Windows)
+🧠 Conceptos clave
+git init: inicia repositorio
+git add: prepara archivos
+git commit: guarda cambios
+git push: sube cambios a GitHub
+git remote: conecta con repositorio remoto
+🚀 Resultado final
+
+✔ Proyecto versionado
+✔ Conectado a GitHub
+✔ Listo para colaboración
